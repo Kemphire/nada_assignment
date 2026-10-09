@@ -4,6 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.VerticleBase;
 import io.vertx.core.http.HttpServer;
 import nada.api.ApiRouter;
+import nada.exceptions.HttpExceptions;
 
 public class MainVerticle extends VerticleBase {
 
@@ -20,12 +21,5 @@ public class MainVerticle extends VerticleBase {
           System.out.println(
               "Server running on port " + httpServer.actualPort());
         });
-    // return vertx.createHttpServer().requestHandler(req -> {
-    // req.response()
-    // .putHeader("content-type", "text/plain")
-    // .end("Hello from Kartikey");
-    // }).listen(8888).onSuccess(http -> {
-    // System.out.println("HTTP server started on port 8888");
-    // });
   }
 }

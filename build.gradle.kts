@@ -29,6 +29,8 @@ dependencies {
   implementation("io.vertx:vertx-launcher-application")
   implementation("io.vertx:vertx-web-client")
   implementation("io.vertx:vertx-web")
+  implementation("com.fasterxml.jackson.core:jackson-databind:2.21.7")
+  implementation("tools.jackson.core:jackson-databind:3.1.7")
   testImplementation("io.vertx:vertx-junit5")
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
   testRuntimeOnly("org.junit.platform:junit-platform-launcher")
