@@ -51,8 +51,7 @@ public class SocialGraph implements SocialGraphInterface {
     @Override
     public ShortestPathResponse shortestPath(User u1, User u2) throws SameUsersException {
         if (u1.equals(u2)) {
-            System.out.println("[FAIL] shortestPath: same user " + u1 + " and " + u2);
-            throw new SameUsersException("User " + u1 + "and User " + u2 + "are same");
+            return new ShortestPathResponse(true,0,List.of(u1));
         }
 
         Queue<User> queue = new ArrayDeque<>(List.of(u1));
@@ -115,7 +114,7 @@ public class SocialGraph implements SocialGraphInterface {
 
         if (user == null) {
             System.out.println("[FAIL] getUser: id not found " + id);
-            throw new UserNotFoundException("User with id = " + id + "Not Found");
+            throw new UserNotFoundException("User with id = " + id + " Not Found");
         }
         return user;
 

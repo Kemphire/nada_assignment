@@ -4,7 +4,6 @@ import io.vertx.core.Future;
 import io.vertx.core.VerticleBase;
 import io.vertx.core.http.HttpServer;
 import nada.api.ApiRouter;
-import nada.exceptions.HttpExceptions;
 
 public class MainVerticle extends VerticleBase {
 

@@ -36,7 +36,7 @@ public class ApiRouter {
             } else {
                 System.out.println("[FAIL] " + ctx.request().method() + " " + ctx.request().path()
                         + " -> unexpected " + failure);
-                int status = ctx.statusCode() >= 400 ? ctx.statusCode() : 500;
+                int status = 400;
                 ctx.response()
                         .setStatusCode(status)
                         .putHeader("content-type", "application/json")
