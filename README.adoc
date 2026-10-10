@@ -4,11 +4,62 @@ image:https://img.shields.io/badge/vert.x-5.2.1-purple.svg[link="https://vertx.i
 
 This application was generated using http://start.vertx.io
 
+== Structure
+
+```
+.
+├── build.gradle.kts
+├── file-uploads
+├── flake.lock
+├── flake.nix
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── README.adoc
+├── settings.gradle.kts
+└── src
+    ├── main
+    │   └── java
+    │       └── nada
+    │           ├── api
+    │           │   └── ApiRouter.java
+    │           ├── exceptions
+    │           │   ├── HttpExceptions.java
+    │           │   ├── SameUsersException.java
+    │           │   └── UserNotFoundException.java
+    │           ├── graph
+    │           │   ├── SocialGraphInterface.java
+    │           │   └── SocialGraph.java
+    │           ├── handlers
+    │           │   └── UserHandler.java
+    │           ├── MainVerticle.java
+    │           ├── model
+    │           │   ├── ShortestPathResponse.java
+    │           │   └── User.java
+    │           └── store
+    │               └── NetworkManager.java
+    └── test
+        └── java
+            └── nada
+                ├── api
+                │   └── ApiRouterTest.java
+                ├── graph
+                │   └── SocialGraphTest.java
+                └── TestMainVerticle.java
+
+40 directories, 35 files
+
+
+```
+
 == Building
 
 === First Set up the environment 
 
-To enter the shell containing java25 and gradle
+To enter the shell containing java25 and gradle (First install nix, see below)
 ```
 nix --extra-experimental-features 'nix-command flakes' develop
 ```
@@ -45,4 +96,23 @@ in flake.nix file, change VERTX_APPLICATION_PORT to port number of your liking
 curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --daemon
 ```
 
+= Disclosures and Answers
 
+== How to run the server, including the port.
+
+Read the Building section
+
+== How to run the tests.
+
+Read the Building section
+
+== What you would do next with more time.
+
+- I would have implemented more features like pagination for /contacts
+- Maybe oauth2 or jwt based authentication also
+- I would have used Neo4j or other graph based DB
+- I would have implemented suggestion or recommendation engine, if had more time and a good PRD
+
+== Which AI tools you used, if any.
+
+I used Opencode with meta muse 1.3 model
