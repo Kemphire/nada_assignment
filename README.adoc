@@ -6,6 +6,13 @@ This application was generated using http://start.vertx.io
 
 == Building
 
+=== First Set up the environment 
+
+To enter the shell containing java25 and gradle
+```
+nix --extra-experimental-features 'nix-command flakes' develop
+```
+
 To launch your tests:
 ```
 ./gradlew clean test
@@ -16,10 +23,14 @@ To package your application:
 ./gradlew clean assemble
 ```
 
-To run your application:
+To run your application (Default Port 8080):
 ```
 ./gradlew clean run
 ```
+
+=== Change Port
+
+in flake.nix file, change VERTX_APPLICATION_PORT to port number of your liking
 
 == Help
 
@@ -27,5 +38,11 @@ To run your application:
 * https://stackoverflow.com/questions/tagged/vert.x?sort=newest&pageSize=15[Vert.x Stack Overflow]
 * https://groups.google.com/forum/?fromgroups#!forum/vertx[Vert.x User Group]
 * https://discord.gg/6ry7aqPWXy[Vert.x Discord]
+
+=== Install Nix for using flakes to download java and gradle
+
+```
+curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --daemon
+```
 
 

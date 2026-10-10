@@ -15,7 +15,9 @@ public class MainVerticle extends VerticleBase {
     var router = ApiRouter.create(vertx);
     server = vertx.createHttpServer().requestHandler(router);
 
-    return server.listen(8080)
+    var port = Integer.parseInt(
+        System.getenv().getOrDefault("VERTX_APPLICATION_PORT", "8080"));
+    return server.listen(port)
         .onSuccess(httpServer -> {
           System.out.println(
               "Server running on port " + httpServer.actualPort());
